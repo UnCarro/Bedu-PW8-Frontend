@@ -32,9 +32,9 @@ export function MyForm() {
 
     return (
         <>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <label>Nombre de entrevistador:
-                    <input id="interviewerName" onChange={handleOnChange} defaultValue="" value={interviewerName} type="text" placeholder="enter interviewer name" />
+                    <input id="interviewerName" onChange={handleOnChange} value={interviewerName} type="text" placeholder="enter interviewer name" />
                 </label>
             </form>
             <button onClick={handleSubmit}>Submit</button>
