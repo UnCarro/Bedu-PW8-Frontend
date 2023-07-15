@@ -4,11 +4,16 @@ import { useState } from "react";
 export function MyForm() {
 
 
-    const [interviewerName, setInterviewerName] = useState("");
+    const [interviewerName, setInterviewerName] = useState({});
 
     const handleOnChange = (event) => {
         setInterviewerName(
-            event.target.value
+            {
+                Name: event.target.value,
+                lastName: "",
+                email: "",
+                isActive: ""
+            }
         )
 
         console.log(interviewerName);
@@ -17,25 +22,28 @@ export function MyForm() {
     const handleSubmit = () => {
 
         console.log(interviewerName);
-        // axios.post("/test",
-        //     { a: event.target.value })
-        //     .then(response => {
-        //         console.log(response);
-        //     }
-        //     )
-        //     .catch(
-        //         e => {
-        //             console.log(e);
-        //         }
-        //     );
+        axios.post("http://localhost:8080/add-interviewer",
+            {
+                interviewerName
+            })
+            .then(response => {
+                console.log(response);
+            }
+            )
+            .catch(
+                e => {
+                    console.log(e);
+                }
+            );
     }
 
     return (
         <>
             <form onSubmit={handleSubmit}>
                 <label>Nombre de entrevistador:
-                    <input id="interviewerName" onChange={handleOnChange} value={interviewerName} type="text" placeholder="enter interviewer name" />
+                    <input id="interviewerName" onChange={handleOnChange} type="text" placeholder="enter interviewer name" />
                 </label>
+
             </form>
             <button onClick={handleSubmit}>Submit</button>
         </>
