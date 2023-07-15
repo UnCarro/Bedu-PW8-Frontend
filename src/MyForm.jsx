@@ -1,9 +1,22 @@
 import axios from "axios"
+import { useState } from "react";
 
 export function MyForm() {
 
-    const handleSubmit = (event) => {
-        console.log(event);
+
+    const [interviewerName, setInterviewerName] = useState("");
+
+    const handleOnChange = (event) => {
+        setInterviewerName(
+            event.target.value
+        )
+
+        console.log(interviewerName);
+    }
+
+    const handleSubmit = () => {
+
+        console.log(interviewerName);
         // axios.post("/test",
         //     { a: event.target.value })
         //     .then(response => {
@@ -21,7 +34,7 @@ export function MyForm() {
         <>
             <form >
                 <label>Nombre de entrevistador:
-                    <input id="interviewerName" type="text" />
+                    <input id="interviewerName" onChange={handleOnChange} defaultValue="" value={interviewerName} type="text" placeholder="enter interviewer name" />
                 </label>
             </form>
             <button onClick={handleSubmit}>Submit</button>
