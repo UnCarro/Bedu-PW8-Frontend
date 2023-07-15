@@ -1,17 +1,18 @@
 import axios from "axios"
 
-
-
 export function MyForm() {
 
     const handleSubmit = () => {
-        axios.post()
+        axios.post("",
+            {})
+            .then()
+            .catch();
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Enter your name:
-                <input type="text" />
+            <label>Nombre de entrevistador:
+                <input id="interviewerName" type="text" />
             </label>
         </form>
     )
