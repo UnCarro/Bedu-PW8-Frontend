@@ -47,15 +47,18 @@ export function MyForm() {
 
 
         console.log(interviewerWrapper);
-        axios.post("http://localhost:8080/add-interviewer", { interviewerWrapper }
-        )
+        axios({
+            url: "http://localhost:8080/add-interviewer",
+            method: "post",
+            data: interviewerWrapper
+        })
             .then(response => {
-                console.log(response);
+                console.log("Success! " + response);
             }
             )
             .catch(
                 e => {
-                    console.log(e);
+                    console.log("Error:" + e);
                 }
             );
     }
