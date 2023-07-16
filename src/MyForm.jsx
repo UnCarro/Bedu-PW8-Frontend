@@ -73,9 +73,8 @@ export function MyForm() {
                     <input id="interviewerLastName" onChange={handleOnChangeLastName} type="text" placeholder="enter interviewer Last name" />
                 </label>
                 <label>Email del entrevistador:
-                    <input id="interviewerEmail" onChange={handleOnChangeEmail} type="text" placeholder="enter interviewer Email" />
+                    <input id="interviewerEmail" onChange={handleOnChangeEmail} type="email" placeholder="enter interviewer Email" />
                 </label>
-
 
             </form>
             <button onClick={handleSubmit}>Submit</button>
