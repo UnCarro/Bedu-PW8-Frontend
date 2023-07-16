@@ -76,25 +76,28 @@ export function MyForm() {
     return (
         <>
 
+            {isSuccess && <div className="success">Success!</div>}
+            {isError && <div className="error">Something went wrong! Please try again.</div>}
+
+
             <div>
                 <form onSubmit={handleSubmit}>
                     <label>Nombre del entrevistador:
                         <input id="interviewerName" onChange={handleOnChangeName} type="text" placeholder="enter interviewer name" />
                     </label>
+                    <br />
                     <label>Apellido del entrevistador:
                         <input id="interviewerLastName" onChange={handleOnChangeLastName} type="text" placeholder="enter interviewer Last name" />
                     </label>
+                    <br />
                     <label>Email del entrevistador:
                         <input id="interviewerEmail" onChange={handleOnChangeEmail} type="email" placeholder="enter interviewer Email" />
                     </label>
-
                 </form>
+                <br />
                 <button onClick={handleSubmit}>Submit</button>
             </div>
-            <div>
-                {isSuccess && <div className="success">Success!</div>}
-                {isError && <div className="error">Something went wrong! Please try again.</div>}
-            </div>
+
         </>
     )
 }
