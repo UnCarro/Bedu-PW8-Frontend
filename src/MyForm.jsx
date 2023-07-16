@@ -7,6 +7,8 @@ export function MyForm() {
     const [interviewerName, setInterviewerName] = useState("");
     const [interviewerLastName, setInterviewerLastName] = useState("");
     const [interviewerEmail, setInterviewerEmail] = useState("");
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const interviewerWrapper = {
         name: "",
@@ -54,10 +56,18 @@ export function MyForm() {
         })
             .then(response => {
                 console.log("Success! " + response);
+                setIsSuccess(true);
+                setTimeout(() => {
+                    setIsSuccess(false)
+                }, 5000)
             }
             )
             .catch(
                 e => {
+                    setIsError(true);
+                    setTimeout(() => {
+                        setIsError(false)
+                    }, 5000)
                     console.log("Error:" + e);
                 }
             );
@@ -65,19 +75,26 @@ export function MyForm() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Nombre del entrevistador:
-                    <input id="interviewerName" onChange={handleOnChangeName} type="text" placeholder="enter interviewer name" />
-                </label>
-                <label>Apellido del entrevistador:
-                    <input id="interviewerLastName" onChange={handleOnChangeLastName} type="text" placeholder="enter interviewer Last name" />
-                </label>
-                <label>Email del entrevistador:
-                    <input id="interviewerEmail" onChange={handleOnChangeEmail} type="email" placeholder="enter interviewer Email" />
-                </label>
 
-            </form>
-            <button onClick={handleSubmit}>Submit</button>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <label>Nombre del entrevistador:
+                        <input id="interviewerName" onChange={handleOnChangeName} type="text" placeholder="enter interviewer name" />
+                    </label>
+                    <label>Apellido del entrevistador:
+                        <input id="interviewerLastName" onChange={handleOnChangeLastName} type="text" placeholder="enter interviewer Last name" />
+                    </label>
+                    <label>Email del entrevistador:
+                        <input id="interviewerEmail" onChange={handleOnChangeEmail} type="email" placeholder="enter interviewer Email" />
+                    </label>
+
+                </form>
+                <button onClick={handleSubmit}>Submit</button>
+            </div>
+            <div>
+                {isSuccess && <div className="success">Success!</div>}
+                {isError && <div className="error">Something went wrong! Please try again.</div>}
+            </div>
         </>
     )
 }
