@@ -9,7 +9,7 @@ export function MyForm() {
 
     const [isSuccess, setIsSuccess] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("Unexpected Error");
 
     const interviewerWrapper = {
         name: "",
@@ -66,6 +66,7 @@ export function MyForm() {
                     setErrorMessage(e.response.data.message);
                     setTimeout(() => {
                         setIsError(false)
+                        setErrorMessage("Unexpected Error")
                     }, 5000)
                 }
             );
@@ -76,8 +77,7 @@ export function MyForm() {
             <div>
 
                 {isSuccess && <div className="success">Success!</div>}
-                {isError && <div className="error">{errorMessage}.<br /> Please try again.</div>}
-
+                {isError && <div className="error">We are having issues processing your request. <br />Reason: {errorMessage}</div>}
 
                 <div>
                     <form onSubmit={handleSubmit}>

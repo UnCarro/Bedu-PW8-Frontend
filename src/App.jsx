@@ -1,10 +1,14 @@
-import './App.css'
-import { MyForm } from './MyForm'
+import './styles/App.css'
+import { MyForm } from './comps/MyForm'
+import { Header } from './comps/Header'
 
 function App() {
 
   return (
-    <MyForm />
+    <>
+      <Header />
+      <MyForm />
+    </>
   )
 }
 
