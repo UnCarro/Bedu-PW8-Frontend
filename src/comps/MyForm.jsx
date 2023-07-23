@@ -73,37 +73,37 @@ export function MyForm() {
     }
 
     return (
-        <> 
-        <div class="image-container">                
-            <img src="https://cdn-icons-png.flaticon.com/512/2179/2179306.png" alt="InTecViewLogo" />
-            <h3>Interviewers Registration</h3>
-        </div>
-        
-            <div class="form-wrapper dark">  
-           
+        <>
+
+
+            <div className="form-wrapper dark">
+                <div className="image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2179/2179306.png" alt="InTecViewLogo" />
+                    <h3>Interviewers Registration</h3>
+                </div>
                 <div >
                     <form onSubmit={handleSubmit}>
-                        <label class="text"><span>Name:</span>
-                        <div class="input-wrapper">
-                            <input id="interviewerName" onChange={handleOnChangeName} type="text" placeholder="Enter interviewer name" />
+                        <label className="text"><span>Name:</span>
+                            <div className="input-wrapper">
+                                <input id="interviewerName" onChange={handleOnChangeName} type="text" placeholder="Enter interviewer name" />
                             </div>
                         </label>
                         <br />
-                        <label class="text"><span>Last name:</span>
-                        <div class="input-wrapper">
-                            <input id="interviewerLastName" onChange={handleOnChangeLastName} type="text" placeholder="Enter interviewer Last name" />
+                        <label className="text"><span>Last name:</span>
+                            <div className="input-wrapper">
+                                <input id="interviewerLastName" onChange={handleOnChangeLastName} type="text" placeholder="Enter interviewer Last name" />
                             </div>
                         </label>
                         <br />
-                        <label class="text"><span>Email:</span>
-                        <div class="input-wrapper">
-                            <input id="interviewerEmail" onChange={handleOnChangeEmail} type="email" placeholder="Enter interviewer Email" />
+                        <label className="text"><span>Email:</span>
+                            <div className="input-wrapper">
+                                <input id="interviewerEmail" onChange={handleOnChangeEmail} type="email" placeholder="Enter interviewer Email" />
                             </div>
                         </label>
-                        
+
                     </form>
                     <br />
-                    <div class="result-wrapper">
+                    <div className="result-wrapper">
                         {isSuccess && <div className="success">Success!</div>}
                         {isError && <div className="error">We are having issues processing your request. <br />Reason: {errorMessage}</div>}
                     </div>
