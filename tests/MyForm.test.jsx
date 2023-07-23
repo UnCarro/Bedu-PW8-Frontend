@@ -13,9 +13,9 @@ describe("MyForm Component", () => {
   it("should display success message on successful form submission", async () => {
     // Arrange
     render(<MyForm />);
-    const nameInput = screen.getByLabelText(/Nombre del entrevistador/i);
-    const lastNameInput = screen.getByLabelText(/Apellido del entrevistador/i);
-    const emailInput = screen.getByLabelText(/Email del entrevistador/i);
+    const nameInput = screen.getByLabelText(/Name:/);
+    const lastNameInput = screen.getByLabelText(/Last name:/);
+    const emailInput = screen.getByLabelText(/Email:/);
     const submitButton = screen.getByText(/Submit/i);
 
     const successMessage = "Success!";
@@ -43,9 +43,9 @@ describe("MyForm Component", () => {
   it("should display error message on failed form submission because invalid name", async () => {
     // Arrange
     render(<MyForm />);
-    const nameInput = screen.getByLabelText(/Nombre del entrevistador/i);
-    const lastNameInput = screen.getByLabelText(/Apellido del entrevistador/i);
-    const emailInput = screen.getByLabelText(/Email del entrevistador/i);
+    const nameInput = screen.getByLabelText(/Name:/);
+    const lastNameInput = screen.getByLabelText(/Last name:/);
+    const emailInput = screen.getByLabelText(/Email:/);
     const submitButton = screen.getByText(/Submit/i);
 
     const intervieweeData = {
