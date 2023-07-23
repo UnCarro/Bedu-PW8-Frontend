@@ -2,4 +2,4 @@
 
 ## Front end running locally
 
-![front-running-locally-screen-capture](img\front-running-locally-screen-capture.jpg)
+![front-running-locally-screen-capture](img/front-running-locally-screen-capture.jpg)
