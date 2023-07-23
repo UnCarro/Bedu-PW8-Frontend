@@ -78,7 +78,7 @@ export function MyForm() {
 
             <div className="form-wrapper dark">
                 <div className="image-container">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2179/2179306.png" alt="InTecViewLogo" />
+                    <img src="src\assets\interviewer_color.png" alt="InTecViewLogo" />
                     <h3>Interviewers Registration</h3>
                 </div>
                 <div >
